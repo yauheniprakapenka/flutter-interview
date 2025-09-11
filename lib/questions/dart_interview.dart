@@ -3376,13 +3376,31 @@ class MyClass<T extends ComparableAndIterable<T>> {
     tags: [Tag.dart],
     q: 'Можно ли указать default значение для generic-параметра?',
     a: '''
-Нет, в Dart нельзя указать default значение для generic-параметра напрямую как в некоторых других языках.
+Нет, в Dart нельзя указать значение по умолчанию для generic-параметра (типа).
 
-// ❌ Нельзя так:
-class MyClass<T = String> { } // Ошибка синтаксиса
+// ❌ НЕ РАБОТАЕТ
+class Box<T = String> {  // Ошибка: Default values for type parameters are not supported.
+  T value;
+  Box(this.value);
+}
 
-// ❌ И так тоже нельзя:
-void myFunction<T = int>() { } // Ошибка синтаксиса
+
+✅ Можно использовать статический фабричный метод
+
+class Box<T> {
+  final T value;
+
+  Box(this.value);
+
+  // Статический метод с типом по умолчанию
+  static Box<String> create(String value) => Box<String>(value);
+}
+
+// Использование:
+void main() {
+  var box1 = Box<int>(100);
+  var box2 = Box.create("default string"); // тип String "по умолчанию"
+}
 
 ''',
   ),
