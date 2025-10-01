@@ -5620,4 +5620,25 @@ final jsonString = jsonEncode(json); // JSON строка
 final restoredUser = User.fromJson(jsonDecode(jsonString));
 ''',
   ),
+  QA(
+    q: 'Для чего нужен removeAt?',
+    a: 'removeAt удаляет элемент по индексу и возвращает удаленный элемент',
+  ),
+  QA(
+    q: 'Для чего нужен sublist?',
+    a: '''
+это метод у List, который позволяет получить часть списка по диапазону индексов.
+
+Сигнатура:
+list.sublist(int start, [int end])
+
+– start — индекс, с которого начинаем (включительно).
+– end — индекс, до которого берем (не включая его). Если не указывать, берется до конца.
+
+Пример:
+var numbers = [10, 20, 30, 40, 50];
+numbers.sublist(1, 3); // [20, 30]
+numbers.sublist(2); // [30, 40, 50]
+''',
+  ),
 ];
