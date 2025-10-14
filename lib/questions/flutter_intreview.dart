@@ -8,7 +8,7 @@ const List<QA> flutterInterview = [
     a: '''
 StatefulWidget может изменять себя изнутри через setState(), а StatelessWidget изменяется только когда родительский виджет передает ему новые параметры.
 Когда использовать: если данные виджета не меняются после создания - используй StatelessWidget. Если нужно хранить и изменять данные - StatefulWidget.
-'''
+''',
   ),
   QA(
     q: 'Что произойдёт, если вызвать setState() в методе build() у StatefulWidget?',
@@ -75,7 +75,7 @@ class _CounterProviderState extends State<CounterProvider> {
     );
   }
 }
-'''
+''',
   ),
   QA(
     q: 'Что произойдет, если передать в setState() пустую функцию: setState((){})?',
@@ -102,7 +102,7 @@ class BadStatelessWidget extends StatelessWidget {
     );
   }
 }
-'''
+''',
   ),
   QA(
     q: 'Что произойдёт, если внутри initState() вызвать setState()?',
@@ -146,7 +146,7 @@ void didChangeDependencies() {
     _counter = 10;
   });
 }
-'''
+''',
   ),
   QA(
     q: 'Почему нельзя вызывать async/await напрямую в initState()?',
@@ -185,7 +185,7 @@ RenderBox - это базовый класс в рендер-слое Flutter, �
 2. Вычисляет свой размер в методе performLayout()
 3. Рисует себя в методе paint()
 4. Может обрабатывать события в hitTest()
-'''
+''',
   ),
   QA(
     q: 'Почему нельзя использовать context после async-операций?',
@@ -195,7 +195,7 @@ Context становится небезопасным после async-опер�
 Проблема:
 Context привязан к конкретному виджету в дереве. Если пользователь закрыл экран или виджет пересобрался,
 а async-операция еще выполняется, то context становится недействительным.
-'''
+''',
   ),
   QA(
     q: 'Какая разница между Widget, Element и RenderObject?',
@@ -243,7 +243,7 @@ Widget (создается при каждом rebuild)
 Element (переиспользуется, живет долго)
     ↓
 RenderObject (переиспользуется, самый дорогой)
-'''
+''',
   ),
   QA(
     q: 'Для чего нужен BuildContext?',
@@ -443,7 +443,7 @@ TextField(
   key: ValueKey('email_field'),
   controller: emailController,
 )
-'''
+''',
   ),
   QA(
     q: 'Что произойдет, если использовать UniqueKey в ListView.builder?',
@@ -538,7 +538,7 @@ Widget build(BuildContext context) {
     child: Text('Половина ширины экрана'),
   );
 }
-'''
+''',
   ),
   QA(
     q: 'Что такое mounted в StatefulWidget?',
@@ -643,7 +643,7 @@ void _saveAndNavigate() async {
     Navigator.of(context).pop();
   }
 }
-'''
+''',
   ),
   QA(
     q: 'Жизненный цикл StatefulWidget?',
@@ -731,7 +731,7 @@ BLoC (Business Logic Component) - это архитектурный паттер
 2. UI только отправляет события и слушает состояния
 3. Односторонний поток данных: Event → BLoC → State
 4. BLoC ничего не знает об UI, полностью независим
-'''
+''',
   ),
   QA(
     q: 'Как передать ошибку в состояние в Cubit?',
@@ -805,7 +805,7 @@ BlocBuilder<UserCubit, UserState>(
     return Text('Нажмите "Загрузить"');
   },
 )
-'''
+''',
   ),
   QA(
     q: 'Что произойдёт, если в Cubit вызвать emit дважды подряд с одинаковым состоянием?',
@@ -905,7 +905,7 @@ void main() async {
   // Запуск приложения
   runApp(MyApp());
 }
-'''
+''',
   ),
   QA(
     q: 'Что такое `WidgetsBinding.instance.addPersistentFrameCallback()` и как он отличается от addPostFrameCallback()?',
@@ -1197,7 +1197,48 @@ Flutter сравнивает новое дерево с предыдущим.
 Если не совпадают → Flutter удаляет старый элемент (dispose, unmount) и создает новый (initState, mount).
 ''',
   ),
-  QA(444
+  QA(
+    q: 'Как создать виджет, который отображает разный контент в зависимости от размера экрана?',
+    a: '''
+
+class Responsive extends StatelessWidget {
+  final Widget mobile;
+  final Widget tablet;
+  final Widget desktop;
+  const Responsive({
+    Key? key,
+    required this.mobile,
+    required this.tablet,
+    required this.desktop,
+  }) : super(key: key);
+
+  // screen sizes
+  static bool isMobile() => AppMedia.width < AppBreakpoints.sm;
+
+  static bool isTablet() =>
+      AppMedia.width < AppBreakpoints.xmd &&
+      AppMedia.width >= AppBreakpoints.sm;
+
+  static bool isDesktop() => AppMedia.width >= AppBreakpoints.lg;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth >= AppBreakpoints.lg) {
+          return desktop;
+        } else if (constraints.maxWidth >= AppBreakpoints.md) {
+          return tablet;
+        } else {
+          return mobile;
+        }
+      },
+    );
+  }
+}
+''',
+  ),
+  QA(
     q: 'Что такое PlatformChannel и как организовать двустороннюю связь с нативным кодом?',
     a: r'''
 PlatformChannel позволяет вызывать нативные методы Android/iOS из Flutter и наоборот.
@@ -1838,9 +1879,10 @@ MultiBlocProvider(
 ''',
   ),
 
-  QA(tags: [Tag.flutter],
-  q: 'Что такое WidgetTree?',
-  a: '''
+  QA(
+    tags: [Tag.flutter],
+    q: 'Что такое WidgetTree?',
+    a: '''
 WidgetTree — это иммутабельное декларативное описание интерфейса.
 WidgetTree — это чертёж интерфейса, который Flutter потом "оживляет" через ElementTree и RenderObjectTree.
 
@@ -1863,7 +1905,7 @@ Scaffold
  └── Center
        └── Text("Hello")
 
-'''
+''',
   ),
 
   QA(
@@ -1937,7 +1979,7 @@ WidgetTree (временное)          ElementTree (долгоживущее) 
 │   Center     │                │   CenterElement  │             │   RenderBox      │
 │    Text("Hi")│                │     TextElement  │             │     RenderParagraph(text: "Hi") ← обновилось!
 └──────────────┘                └──────────────────┘             └──────────────────┘
-'''
+''',
   ),
 
   QA(
@@ -3708,7 +3750,272 @@ import Flutter
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
 }
-
 ''',
   ),
+  QA(
+    tags: [Tag.flutter],
+    q: 'Как добавить тень без BoxDecoration в одну строку?',
+    a: r'''
+elevation: 5
+
+Использовать внутри виджетов таких как Card, Material, or FloatingActionButton.
+
+Нет необходимости использовать BoxShadow внутри Container.
+''',
+  ),
+  QA(
+    q: 'Как скопировать TextStyle, изменив только то что нужно в одну строку?',
+    a: 'myStyle.copyWith(color: Colors.purple)',
+  ),
+  QA(
+    q: 'Как создать Glassmorphism Blur Effect?',
+    a: r'''
+BackdropFilter(filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10))
+
+Поместить внутрь Stack.
+
+1. Базовая Glassmorphism карточка
+
+import 'dart:ui';
+import 'package:flutter/material.dart';
+
+Stack(
+  children: [
+    // Фон с градиентом
+    Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.purple, Colors.blue],
+        ),
+      ),
+    ),
+
+    // Glassmorphism карточка
+    Center(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Container(
+            width: 300,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.2),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(
+                color: Colors.white.withOpacity(0.3),
+                width: 1.5,
+              ),
+            ),
+            child: Center(
+              child: Text(
+                'Glassmorphism',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  ],
+)
+
+2. Glassmorphism кнопка
+
+ClipRRect(
+  borderRadius: BorderRadius.circular(15),
+  child: BackdropFilter(
+    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+    child: Container(
+      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.15),
+        borderRadius: BorderRadius.circular(15),
+        border: Border.all(color: Colors.white.withOpacity(0.2)),
+      ),
+      child: Text(
+        'Нажми меня',
+        style: TextStyle(color: Colors.white, fontSize: 16),
+      ),
+    ),
+  ),
+)
+
+3. Glassmorphism AppBar
+
+Stack(
+  children: [
+    // Контент страницы
+    ListView.builder(
+      itemCount: 20,
+      itemBuilder: (context, index) => ListTile(
+        title: Text('Элемент $index'),
+      ),
+    ),
+    // Glassmorphism AppBar
+    Positioned(
+      top: 0,
+      left: 0,
+      right: 0,
+      child: ClipRRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Container(
+            height: 100,
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.1),
+              border: Border(
+                bottom: BorderSide(
+                  color: Colors.white.withOpacity(0.2),
+                ),
+              ),
+            ),
+            child: SafeArea(
+              child: Center(
+                child: Text(
+                  'Заголовок',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  ],
+)
+''',
+  ),
+  QA(
+    q: 'Для чего нужен виджет AutoSizeText из пакета auto_size_text?',
+    a: r'''
+AutoSizeText — это виджет, который автоматически подстраивает размер текста под доступное пространство.
+Никаких  text overflow, никаких обрезанных слов.
+
+dependencies:
+  auto_size_text: ^3.0.0
+
+import 'package:auto_size_text/auto_size_text.dart';
+
+// Вместо обычного Text:
+Text('Очень длинный текст, который может не поместиться')
+
+// Используйте AutoSizeText:
+AutoSizeText(
+  'Очень длинный текст, который может не поместиться',
+  style: TextStyle(fontSize: 20),
+)
+  ''',
+  ),
+  QA(
+    q: 'Как убрать Android Overscroll Glow эффект?',
+    a: '''
+Синий эффект свечения при прокрутке (overscroll glow) — это стандартное поведение Android.
+Но иногда нужен более чистый, iOS-подобный скролл без этого эффекта.
+
+🎯 Быстрое решение
+
+ListView(
+  physics: ClampingScrollPhysics(), // Убирает синее свечение
+  children: [
+    // Ваш контент
+  ],
+)
+''',
+  ),
+  QA(
+    q: 'Какие есть типы ScrollPhysics?',
+    a: '''
+1. ClampingScrollPhysics (Android стиль БЕЗ свечения)
+
+ListView(
+  physics: ClampingScrollPhysics(),
+  children: [
+    ListTile(title: Text('Элемент 1')),
+    ListTile(title: Text('Элемент 2')),
+    ListTile(title: Text('Элемент 3')),
+  ],
+)
+
+2. BouncingScrollPhysics (iOS стиль)
+
+ListView(
+  physics: BouncingScrollPhysics(),
+  children: [
+    // Контент
+  ],
+)
+
+3. AlwaysScrollableScrollPhysics (Всегда скроллится)
+
+SingleChildScrollView(
+  physics: AlwaysScrollableScrollPhysics(),
+  child: Container(
+    height: 100, // Меньше экрана, но все равно скроллится
+    child: Text('Короткий контент'),
+  ),
+)
+
+4. NeverScrollableScrollPhysics (Отключает скролл)
+
+ListView(
+  physics: NeverScrollableScrollPhysics(),
+  shrinkWrap: true, // Часто используется вместе
+  children: [
+    // Не скроллится, полезно для вложенных списков
+  ],
+)
+''',
+  ),
+  QA(
+    q: 'Как получить размер виджета после рендера?',
+    a: '''
+WidgetsBinding.instance.addPostFrameCallback((_) {
+  final size = context.size;
+});
+''',
+  ),
+  QA(q: 'Для чего нужен flutter_animate?', a: '''
+Text('Hello').animate().fade().scale()
+
+flutter_animate — это революционный пакет, который превращает сложные анимации во Flutter в простые цепочки методов.
+Без контроллеров, Ticker.
+
+dependencies:
+  flutter_animate: ^4.5.0
+
+// Простое появление
+Text('Появляюсь!')
+  .animate()
+  .fade();
+
+// С настройками
+Text('Кастомное затухание')
+  .animate()
+  .fade(
+    duration: 600.ms,
+    delay: 200.ms,
+    curve: Curves.easeInOut,
+  );
+
+'''),
+QA(q: 'Для чего нужен Transform.scale?', a: '''
+Transform.scale — это виджет для создания эффекта масштабирования (zoom).
+
+Transform.scale(
+  scale: 1.2,              // Масштаб (1.0 = оригинал, 2.0 = в 2 раза больше)
+  alignment: Alignment.center, // Точка масштабирования
+  origin: Offset(0, 0),    // Смещение точки трансформации
+  child: Widget,
+)
+
+''')
 ];
