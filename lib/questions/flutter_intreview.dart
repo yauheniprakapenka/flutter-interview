@@ -1266,7 +1266,6 @@ Stream<bool> get chargingStream => _eventChannel.receiveBroadcastStream().cast<b
 
 ''',
   ),
-
   QA(
     q: 'В чем разница между Positioned и Align внутри Stack?',
     a: '''
@@ -1283,7 +1282,6 @@ Spacer — это Expanded(child: SizedBox()), автоматически зан
 SizedBox — фиксированный размер
 ''',
   ),
-
   QA(
     q: 'Как работает CustomPainter и что такое Canvas?',
     a: '''
@@ -1363,7 +1361,6 @@ FutureBuilder<String>(
 )
 ''',
   ),
-
   QA(
     q: 'Что такое Overlay и OverlayEntry? Как показать виджет поверх всего экрана?',
     a: '''
@@ -1490,7 +1487,6 @@ final screenWidth = MediaQuery.maybeOf(context)?.size.width ?? 400;
 
 ''',
   ),
-
   QA(
     q: 'Что такое RenderObject и как он связан с виджетами?',
     a: '''
@@ -1510,7 +1506,6 @@ hitTest() — определяет касания
 Не все виджеты создают RenderObject (StatelessWidget не создает), только RenderObjectWidget.
 ''',
   ),
-
   QA(
     q: 'В чем разница между MaterialApp и WidgetsApp?',
     a: '''
@@ -1532,7 +1527,6 @@ MaterialApp(
 )
 ''',
   ),
-
   QA(
     q: 'Что произойдет, если использовать StatefulWidget без переменных состояния?',
     a: '''
@@ -1560,7 +1554,6 @@ class EmptyStateless extends StatelessWidget {
 }
 ''',
   ),
-
   QA(
     q: 'В чем разница между SingleChildScrollView и ListView?',
     a: r'''
@@ -1699,7 +1692,6 @@ Bloc
 
 ''',
   ),
-
   QA(
     q: 'Пример Cubit',
     a: r'''
@@ -1868,7 +1860,6 @@ MultiBlocProvider(
 
 ''',
   ),
-
   QA(
     q: 'Виджет const и без const',
     a: '''
@@ -1878,7 +1869,6 @@ MultiBlocProvider(
 Если вы не добавляете const, Flutter создает новый экземпляр виджета каждый раз, когда он используется.
 ''',
   ),
-
   QA(
     tags: [Tag.flutter],
     q: 'Что такое WidgetTree?',
@@ -1907,7 +1897,6 @@ Scaffold
 
 ''',
   ),
-
   QA(
     tags: [Tag.flutter],
     q: 'Что такое ElementTree?',
@@ -1981,7 +1970,6 @@ WidgetTree (временное)          ElementTree (долгоживущее) 
 └──────────────┘                └──────────────────┘             └──────────────────┘
 ''',
   ),
-
   QA(
     tags: [Tag.flutter],
     q: 'Что такое RenderObjectTree?',
@@ -2091,7 +2079,6 @@ Widget build(BuildContext context) {
 
 ''',
   ),
-
   QA(
     q: 'Самые часто используемые InheritedWidget?',
     a: '''
@@ -2165,7 +2152,6 @@ class MyWidget extends StatelessWidget {
 
 ''',
   ),
-
   QA(
     q: 'Как реализовать поиск по нажатию на кнопку?',
     a: '''
@@ -2227,7 +2213,6 @@ Restartable (перезапуск с последним событием)
 
 ''',
   ),
-
   QA(
     q: 'Как хранить секретные данные на мобильном устройстве локально в flutter?',
     a: '''
@@ -2270,7 +2255,6 @@ Future<void> checkFirstRunAndClearSecureStorage() async {
 
 ''',
   ),
-
   QA(
     q: '',
     a: r'''
@@ -2366,7 +2350,6 @@ realm.all<User>().changes.listen((changes) {
 
 ''',
   ),
-
   QA(
     q: 'Какие есть базы данных для локального хранилища?',
     a: r'''
@@ -2406,7 +2389,6 @@ final user = box.getAt(0);
 
 ''',
   ),
-
   QA(
     q: 'Что такое PrimaryKey в базе данных?',
     a: '''
@@ -2453,7 +2435,6 @@ Foreign Key - это "ссылка" из одной таблицы на запи
 
 ''',
   ),
-
   QA(
     q: 'В чем разница Реляционная и НеРеляционная базы данных?',
     a: '''
@@ -2475,7 +2456,6 @@ Foreign Key - это "ссылка" из одной таблицы на запи
 
 ''',
   ),
-
   QA(q: 'Что делает базу данной хорошей?', a: 'Наличие миграций'),
   QA(
     q: 'Как скачать большой файл например 1 гб с точки зрения системного дизайна',
@@ -2510,7 +2490,6 @@ response.listen((chunk) {
 
 ''',
   ),
-
   QA(
     q: 'Почему в const конструкторе класса не может быть тела {} в dart?',
     a: '''
@@ -2603,7 +2582,6 @@ class CounterPage extends StatelessWidget {
 }
 ''',
   ),
-
   QA(
     q: 'Что такое RootRestorationScope?',
     a: r'''
@@ -2911,7 +2889,6 @@ FirebaseAnalytics.instance.setCurrentScreen(
 
 ''',
   ),
-
   QA(
     q: 'Что такое обфускация кода?',
     a: r'''
@@ -2998,7 +2975,6 @@ class ApiService {
 }
 ''',
   ),
-
   QA(
     q: 'Понимание концепции и назначения Slivers',
     a: r'''
@@ -3152,7 +3128,6 @@ SliverAppBar(
 
 ''',
   ),
-
   QA(
     q: 'Почему обычные виджеты нужно оборачивать в SliverToBoxAdapter?',
     a: r'''
@@ -3281,7 +3256,6 @@ Viewport ──[SliverConstraints]──► Sliver ──[SliverGeometry]──�
 
 ''',
   ),
-
   QA(
     q: 'Как добавить обработку клавиатуры на любых экрана?',
     a: '''
@@ -3467,7 +3441,6 @@ void main() {
 
 ''',
   ),
-
   QA(
     tags: [Tag.flutter],
     q: 'Для чего нужен clipBehavior: Clip.none в Stack виджете?',
@@ -3521,7 +3494,6 @@ Stack(
 - Clip.antiAliasWithSaveLayer — сглаженная обрезка с дополнительной оптимизацией
 ''',
   ),
-
   QA(
     tags: [Tag.flutter],
     q: 'Архитектура Flutter (3 слоя)',
@@ -3531,7 +3503,6 @@ Engine (c/c++)  : Isolate, Platform channels, Dart VM
 Embedder (platform specific): native plugins
 ''',
   ),
-
   QA(
     tags: [Tag.flutter, Tag.memory],
     q: 'Как работает однопоточный Dart и многопоточный (4 потока) Flutter?  ',
@@ -3594,7 +3565,6 @@ Flutter использует многопоточность движка (C++), 
     q: 'Почему пакет dart:mirrors не используется во Flutter?',
     a: '`dart:mirrors` не поддерживается во Flutter, потому что он требует рефлексии во время выполнения, что несовместимо с AOT-компиляцией и tree shaking, и сильно увеличивает размер сборки.',
   ),
-
   QA(
     tags: [Tag.flutter],
     q: 'Как Dart работает в Web-приложениях?',
@@ -4051,6 +4021,10 @@ Transform.scale(
 BigInt — это встроенный тип в Dart для представления целых чисел произвольной длины, то есть чисел,
 которые могут быть гораздо больше (или меньше), чем позволяет стандартный 64-битный int.
 
+abstract final class BigInt implements Comparable<BigInt> {
+  ...
+}
+
 Основные отличия:
 - BigInt не является подтипом num, в отличие от int и double;
 - не имеет литерального синтаксиса — создаётся только через BigInt.from() или BigInt.parse();
@@ -4061,4 +4035,660 @@ BigInt huge = BigInt.parse('123456789012345678901234567890');
 print(huge + BigInt.from(1)); // 123456789012345678901234567891
 ''',
   ),
+  QA(
+    q: 'Что такое Runes?',
+    a: '''
+Runes — это способ представления символов Unicode в Dart.
+
+Иными словами, это кодовые точки Unicode, которые позволяют корректно работать
+с любыми символами — в том числе эмодзи, иероглифами, и другими многобайтовыми символами.
+
+В Dart строка (String) хранит данные как UTF-16.
+
+Некоторые символы (например, эмодзи 👋) занимают два 16-битных значения.
+Поэтому если просто обращаться к строке по индексу, можно получить не символ, а часть символа.
+
+Пример проблемы:
+
+void main() {
+  var smile = '😊';
+  print(smile.length); // 2 — хотя видим один символ!
+  print(smile.codeUnitAt(0)); // 55357
+  print(smile.codeUnitAt(1)); // 56842
+}
+
+✅ Решение — использовать Runes
+
+Runes позволяют получить реальные Unicode-коды символов, независимо от того, сколько 16-битных единиц они занимают.
+
+void main() {
+  var smile = '😊';
+  print(smile.runes.length); // 1 — теперь правильно!
+  print(smile.runes.first);  // 128522 — это Unicode-код символа 😊
+}
+
+🔁 Преобразование обратно в строку
+
+Чтобы из Unicode-кода получить символ, можно использовать String.fromCharCode() или String.fromCharCodes():
+
+void main() {
+  var heart = Runes('\u2665'); // ♥
+  print(String.fromCharCodes(heart)); // ♥
+}
+
+Итого
+
+Что	                        Возвращает	                Пример
+------------------------------------------------------------------------
+String.codeUnits	          UTF-16 единицы	            [55357, 56842]
+
+String.runes	              Unicode code points	        [128522]
+
+String.fromCharCode() /
+String.fromCharCodes()	    Строку из Unicode кодов	    '😊'
+''',
+  ),
+  QA(
+    q: 'Что такое Symbol?',
+    a: '''
+Symbol — это уникальный идентификатор для имени (переменной, метода, поля и т.д.), который используется во время выполнения (runtime).
+
+То есть Symbol — это способ представить имя как объект.
+
+💡 Зачем он нужен
+
+Обычно Symbol используется:
+- при рефлексии (например, через библиотеку dart:mirrors, которая позволяет вызывать методы по имени во время выполнения),
+- или когда нужно однозначно идентифицировать имя без риска коллизий строк.
+
+⚙️ Как создаётся Symbol
+
+Есть два способа:
+- Через конструктор Symbol('имя')
+- Через синтаксис решётки #, который удобнее и используется чаще
+
+var sym1 = Symbol('foo');
+var sym2 = #foo; // короткий синтаксис
+
+print(sym1 == sym2); // true
+
+🧠 Как это работает
+
+Когда пишем #foo, Dart создаёт объект Symbol, который представляет имя "foo".
+При этом, если два символа имеют одинаковое имя, то они идентичны (interned symbols).
+
+🧰 Пример использования
+void main() {
+  var s1 = #main;
+  var s2 = Symbol('main');
+
+  print(s1 == s2); // true
+  print(s1);       // Symbol("main")
+}
+
+🔍 Использование в рефлексии (пример с dart:mirrors)
+
+⚠️ В Flutter dart:mirrors не поддерживается, но понимание важно для общего владения Dart.
+
+import 'dart:mirrors';
+
+class Person {
+  void sayHello() => print('Hello!');
+}
+
+void main() {
+  var person = Person();
+  var mirror = reflect(person);
+  mirror.invoke(#sayHello, []); // вызов метода по Symbol
+}
+
+Тут #sayHello — это Symbol, который Dart использует, чтобы найти метод с таким именем.
+''',
+  ),
+  QA(
+    q: 'Как убрать фокус с активных полей ввода (например, TextField)?',
+    a: '''
+Можно реализовать виджет
+
+class UnfocusArea extends StatelessWidget {
+	final Widget child;
+
+  const UnfocusArea({required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      // Makes clickable on everywhere even if the widget is not opaque
+      behavior: HitTestBehavior.opaque,
+      // Magic happens here
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: child,
+    );
+  }
+}
+
+📌 1. Назначение виджета:
+UnfocusArea оборачивает любой дочерний виджет (child) и позволяет убрать фокус с активных полей ввода
+(например, TextField), когда пользователь тапает в любой пустой участок экрана. Это удобно для скрытия клавиатуры.
+
+📌 2. Почему behavior: HitTestBehavior.opaque:
+По умолчанию GestureDetector реагирует только на видимую часть (non-transparent) виджета.
+Поскольку child может быть прозрачным или занимать не всё пространство, мы используем opaque, чтобы тап сработал даже на пустом месте.
+
+📌 3. Помощь при работе с TextField:
+Когда TextField в фокусе, клавиатура видна. Тап на UnfocusArea вызывает FocusScope.of(context).unfocus(),
+что снимает фокус с поля и скрывает клавиатуру. Таким образом, UX становится более естественным — пользователю
+не нужно вручную закрывать клавиатуру.
+
+👉 Пример использования
+
+class UnfocusOnTapOutside extends StatelessWidget {
+  const UnfocusOnTapOutside();
+
+  @override
+  Widget build(BuildContext context) {
+    // Reusable widget for easier usage
+    return UnfocusArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Unfocus on tap outside'),
+        ),
+        body: const Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: TextField(
+              decoration: InputDecoration(hintText: 'Click here to focus'),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+''',
+  ),
+  QA(
+    q: 'Как Flutter запускает Dart-код на Android?',
+    a: '''
+🚀 Кратко
+Когда происходит запуск Flutter-приложения на Android:
+- Dart-код компилируется в машинный код, встраивается в Android-приложение (APK или AAB),
+и выполняется внутри Flutter Engine, который работает поверх Android Native (через C/C++).
+
+🔧 Этапы запуска Flutter на Android
+
+1️⃣ Компиляция Dart-кода
+Flutter использует разные режимы сборки:
+
+Режим	                Как компилируется	      Для чего
+Debug	                JIT (Just-In-Time)	    Быстрая перезагрузка (hot reload)
+Profile / Release	    AOT (Ahead-Of-Time)	    Оптимизированный нативный код
+
+🎯 В Debug:
+- Dart-код не компилируется в машинный код заранее.
+- Он работает через Dart VM, которая интерпретирует и компилирует “на лету”.
+- Это позволяет делать hot reload.
+
+🎯 В Release:
+- Dart-компилятор (dart2aot) превращает твой код в нативный ARM или x64 код.
+- Никакой VM не нужно — код запускается напрямую, как C++-библиотека.
+
+2️⃣ Flutter Engine
+После компиляции приложение включает в себя Flutter Engine — это нативная библиотека (libflutter.so), написанная на C++.
+Она выполняет:
+- рендеринг (через Skia),
+- работу с Dart runtime,
+- обработку ввода,
+- вызовы платформенных каналов.
+
+3️⃣ Android host-приложение
+
+Flutter-приложение внутри Android — это обычное Android-приложение (Java/Kotlin),
+в котором создаётся FlutterActivity.
+
+Примерно вот так выглядит основной запуск:
+
+class MainActivity : FlutterActivity() {
+    // FlutterActivity сама инициализирует FlutterEngine
+}
+
+4️⃣ Запуск FlutterEngine
+
+Когда FlutterActivity создаётся:
+1. Она инициализирует FlutterEngine.
+2. FlutterEngine загружает скомпилированный Dart-код (app.so или kernel_blob.bin).
+3. Dart runtime создаёт изолят (Isolate) и начинает исполнять функцию main() из твоего кода.
+
+5️⃣ Рендеринг интерфейса
+1. FlutterEngine использует Skia для отрисовки на SurfaceView или TextureView.
+2. Android передаёт input events (тапы, свайпы) → Flutter Engine → Dart код.
+3. Рендер происходит внутри одного нативного потока, а UI описывается Dart-кодом.
+
+📦 Архитектура на Android (в упрощённом виде)
+┌──────────────────────────────┐
+│         Android OS           │
+│   (Activity, SurfaceView)    │
+└──────────────┬───────────────┘
+               │
+       Flutter Engine (C++)
+     ┌─────────┴───────────────┐
+     │    Skia (рендеринг)     │
+     │  Dart runtime (AOT/JIT) │
+     └─────────┬───────────────┘
+               │
+       Dart-код (твой UI)
+
+🧠 А что с Platform Channels?
+
+Когда Flutter-коду нужно вызвать нативную фичу Android (например, камеру или GPS):
+- Используются Platform Channels — асинхронный мост между Dart и Java/Kotlin.
+- Передача идёт через сериализацию JSON или бинарных сообщений.
+- На Android стороне создаётся MethodChannel, который обрабатывает вызовы от Dart.
+
+⚡ В итоге
+
+Этап	          Что происходит
+Компиляция	    Dart → ARM код (Release) или JIT (Debug)
+Загрузка	      Android запускает FlutterActivity
+Инициализация	  FlutterEngine запускает Dart runtime
+Исполнение	    Dart-код выполняется в изоляте
+Отрисовка	      Skia рисует всё в SurfaceView
+Взаимодействие	Platform Channels связывают Dart ↔ Kotlin/Java
+''',
+  ),
+  QA(
+    q: 'Как в Flutter передавать собственные объекты (например, экземпляр класса User) в нативный код через platform channels и получать обратно объекты из нативной части?',
+    a: '''
+🎯 1. Платформенные каналы поддерживают только стандартные типы
+Platform Channels (MethodChannel, EventChannel) в Flutter не передают напрямую объекты Dart-классов.
+Они работают только с ограниченным набором типов, которые имеют одинаковое представление на обеих сторонах (Dart ↔ native):
+
+- null, bool, num (int, double), String,
+- List (только с элементами из поддерживаемых типов),
+- Map (ключи — строки, значения — из поддерживаемых типов).
+🔑 Ключевой принцип: Объекты нужно сериализовать в Map или List, передать по каналу, затем десериализовать на другой стороне.
+
+
+🎯 2. Передача объекта из Dart в нативную часть
+На стороне Dart:
+
+class User {
+  final String name;
+  final int age;
+
+  User({required this.name, required this.age});
+
+  // Сериализация в Map
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'age': age,
+      };
+}
+
+// Отправка через MethodChannel
+final result = await platform.invokeMethod('processUser', user.toJson());
+
+На стороне натива (пример на Kotlin для Android):
+
+override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
+  if (call.method == "processUser") {
+    val userMap = call.argument<Map<String, Any>>("processUser") // ← на самом деле аргумент передаётся напрямую
+
+    // Но правильнее:
+    val args = call.arguments as Map<*, *> // получаем Map
+    val name = args["name"] as String
+    val age = args["age"] as Int
+
+    // Здесь создаём нативный User-объект, обрабатываем и т.д.
+    val processedUser = mapOf("name" to name, "age" to age + 1) // пример модификации
+    result.success(processedUser)
+
+  }
+}
+⚠️ Замечание: call.arguments уже содержит сериализованные данные, переданные из Dart. Не нужно пытаться передать объект напрямую.
+
+
+🎯 3. Возврат объекта из натива в Dart
+Нативный код возвращает только поддерживаемые типы (обычно Map или List), которые затем десериализуются в Dart:
+
+На стороне Dart:
+
+final response = await platform.invokeMethod('processUser', user.toJson());
+final updatedUser = User.fromJson(response as Map<String, dynamic>);
+
+
+🎯 4. Подходы к сериализации/десериализации
+
+✅ Ручная сериализация
+toJson() / fromJson()
+
+✅ Кодогенерация
+пакеты:
+json_serializable
+freezed
+
+✅ Расширение для IDE
+dart data class generator
+''',
+  ),
+  QA(q: 'Какая разница между Platform Channels, MethodChannel и EventChannel?', a: r'''
+🎯 Platform Channels — общее понятие
+
+Platform Channels — это общий термин, обозначающий механизм двусторонней связи между Dart-кодом (Flutter) и нативным кодом (iOS/Swift или Android/Kotlin/Java).
+
+-Platform Channels — не конкретный класс, а архитектурная концепция, реализуемая через конкретные подтипы каналов:
+- MethodChannel
+- EventChannel
+  (реже) BasicMessageChannel
+
+
+🎯 MethodChannel — вызов методов «запрос-ответ»
+
+Назначение:
+Используется для асинхронного вызова методов в нативном коде из Dart (и наоборот), по принципу RPC (Remote Procedure Call).
+
+Примеры использования:
+- Получить текущую геолокацию один раз.
+- Открыть нативный диалог и вернуть результат.
+- Передать объект User в нативный модуль для обработки и получить обновлённый объект.
+
+final channel = MethodChannel('my_channel');
+final result = await channel.invokeMethod('getUserInfo', {'id': 42});
+
+Нативный код (Android/Kotlin):
+
+channel.setMethodCallHandler { call, result ->
+  if (call.method == "getUserInfo") {
+    val userInfo = fetchUserInfo(call.argument("id"))
+    result.success(userInfo) // или result.error(...)
+  }
+}
+⚠️ Важно: каждый вызов — независимый, канал не сохраняет состояние между вызовами.
+
+
+🎯 EventChannel — поток событий (stream-based)
+
+Назначение:
+Используется для получения потока данных из нативной части в Dart в виде Stream.
+
+Поток данных:
+Натив → Dart: непрерывная или дискретная последовательность событий (например, изменения датчика, уведомления, обновления GPS).
+
+Примеры использования:
+- Прослушивание изменений в уровне заряда батареи.
+- Получение данных с акселерометра в реальном времени.
+- Подписка на push-уведомления из нативного SDK.
+
+Dart-код:
+final stream = EventChannel('battery_channel').receiveBroadcastStream();
+stream.listen((data) {
+  print('Battery level: $data%');
+});
+
+Нативный код (Android/Kotlin):
+val eventChannel = EventChannel(flutterEngine.dartExecutor, "battery_channel")
+eventChannel.setStreamHandler(object : EventChannel.StreamHandler {
+  private var eventSink: EventChannel.EventSink? = null
+
+  override fun onListen(arguments: Any?, events: EventChannel.EventSink?) {
+    eventSink = events
+    startBatteryMonitoring { level ->
+      eventSink?.success(level)
+    }
+  }
+
+  override fun onCancel(arguments: Any?) {
+    stopBatteryMonitoring()
+    eventSink = null
+  }
+})
+💡 EventChannel идеален, когда данные поступают асинхронно и многократно.
+
+profile
+Qwen3-Max
+8:46 pm
+Отличный вопрос — он часто встречается на собеседованиях по Flutter, особенно на позициях mid/senior. Вот чёткое и структурированное объяснение разницы между Platform Channels, MethodChannel и EventChannel, с акцентом на понимание архитектуры и сценариев использования.
+
+🔹 Platform Channels — общее понятие
+Platform Channels — это общий термин, обозначающий механизм двусторонней связи между Dart-кодом (Flutter) и нативным кодом (iOS/Swift или Android/Kotlin/Java).
+
+💡 Platform Channels — не конкретный класс, а архитектурная концепция, реализуемая через конкретные подтипы каналов:
+
+MethodChannel
+EventChannel
+(реже) BasicMessageChannel
+Все они используют один из стандартных кодеков (StandardMethodCodec, StandardMessageCodec и др.) для сериализации данных в поддерживаемые типы.
+
+🔹 MethodChannel — вызов методов «запрос-ответ»
+✅ Назначение:
+Используется для асинхронного вызова методов в нативном коде из Dart (и наоборот), по принципу RPC (Remote Procedure Call).
+
+🔄 Поток данных:
+Однократный запрос → однократный ответ (или ошибка).
+
+Примеры использования:
+Получить текущую геолокацию один раз.
+Открыть нативный диалог и вернуть результат.
+Передать объект User в нативный модуль для обработки и получить обновлённый объект.
+Dart-код:
+dart
+
+
+1
+2
+final channel = MethodChannel('my_channel');
+final result = await channel.invokeMethod('getUserInfo', {'id': 42});
+Нативный код (Android/Kotlin):
+kotlin
+
+
+1
+2
+3
+4
+5
+6
+channel.setMethodCallHandler { call, result ->
+  if (call.method == "getUserInfo") {
+    val userInfo = fetchUserInfo(call.argument("id"))
+    result.success(userInfo) // или result.error(...)
+  }
+}
+⚠️ Важно: каждый вызов — независимый, канал не сохраняет состояние между вызовами.
+
+🔹 EventChannel — поток событий (stream-based)
+✅ Назначение:
+Используется для получения потока данных из нативной части в Dart в виде Stream.
+
+🔄 Поток данных:
+Натив → Dart: непрерывная или дискретная последовательность событий (например, изменения датчика, уведомления, обновления GPS).
+
+Примеры использования:
+Прослушивание изменений в уровне заряда батареи.
+Получение данных с акселерометра в реальном времени.
+Подписка на push-уведомления из нативного SDK.
+
+final stream = EventChannel('battery_channel').receiveBroadcastStream();
+stream.listen((data) {
+  print('Battery level: $data%');
+});
+Нативный код (Android/Kotlin):
+kotlin
+
+
+val eventChannel = EventChannel(flutterEngine.dartExecutor, "battery_channel")
+eventChannel.setStreamHandler(object : EventChannel.StreamHandler {
+  private var eventSink: EventChannel.EventSink? = null
+
+  override fun onListen(arguments: Any?, events: EventChannel.EventSink?) {
+    eventSink = events
+    startBatteryMonitoring { level ->
+      eventSink?.success(level)
+    }
+  }
+
+  override fun onCancel(arguments: Any?) {
+    stopBatteryMonitoring()
+    eventSink = null
+  }
+})
+💡 EventChannel идеален, когда данные поступают асинхронно и многократно.
+
+🔸 Сравнительная таблица
+
++---------------------+---------------------------+----------------------------+
+| Характеристика      | MethodChannel             | EventChannel               |
++---------------------+---------------------------+----------------------------+
+| Тип взаимодействия  | Запрос → Ответ            | Подписка → Поток событий   |
+| Модель данных       | Однократный вызов         | Непрерывный/многократный   |
+| Dart API            | Future<T>                 | Stream<T>                  |
+| Нативный обработчик | MethodCallHandler         | StreamHandler              |
+| Подходит для        | Разовых операций          | Реального времени,         |
+|                     | (получить данные,         |  датчиков, уведомлений     |
+|                     |  вызвать действие)        |                            |
+| Пример использования| Запросить разрешения      | Следить за зарядом батареи |
+| Жизненный цикл      | Вызов → ответ → завершено | Подписка → события → отмена|
++---------------------+---------------------------+----------------------------+
+}
+'''),
+  QA(
+      q: 'Можно ли из Isolate напрямую взаимодействовать с нативной функциональностью, такой как NFC, Bluetooth, камера, геолокация и т.п. ?',
+      a: r'''
+Нет, напрямую нельзя.
+
+🎯 Почему это не работает
+
+Isolate в Flutter — это отдельный поток Dart с собственным Event Loop. Он не имеет доступа к главному потоку платформы (Android/iOS),
+где работают нативные сервисы. Все платформенные API (NFC, Bluetooth, камера и т.д.) связаны именно с главным потоком.
+
+Если попытаться вызвать MethodChannel или PlatformChannel из Isolate, получите ошибку или неопределённое поведение.
+
+## Архитектурный паттерн
+```
+┌────────────────────────────────────────┐
+│         Main Thread (Dart)             │
+│  ┌──────────────────────────────────┐  │
+│  │   MethodChannel / PlatformChannel│◄─┼──┐
+│  └──────────────────────────────────┘  │  │
+└────────────────────────────────────────┘  │
+                                            │
+         ┌─────────────────────────────┐    │
+         │  Isolate (Dart)             │    │
+         │  - Вычисления               │    │
+         │  - Обработка данных         │    │
+         │  - NO платформенные вызовы! │    │
+         └─────────────────────────────┘    │
+                                            │
+         ┌──────────────────────────────┐   │
+         │  Native Layer (Kotlin/Swift) │◄──┘
+         │  - NFC, Bluetooth            │
+         │  - Камера, Геолокация        │
+         └──────────────────────────────┘
+'''),
+  QA(q: 'Как автообновлять токен в Dio?', a: r'''
+Суть решения
+Перехватываем 401 ответ, обновляем токен и переотправляем исходный запрос с новым токеном.
+
+
+class AuthInterceptor extends Interceptor {
+  final Dio dio;
+  String? refreshToken;
+
+  AuthInterceptor(this.dio, this.refreshToken);
+
+  @override
+  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+    options.headers['Authorization'] = 'Bearer $accessToken';
+    handler.next(options);
+  }
+
+  @override
+  void onError(DioException err, ErrorInterceptorHandler handler) async {
+    if (err.response?.statusCode == 401) {
+      try {
+        // Обновляем токен
+        final newToken = await refreshAccessToken(refreshToken);
+        accessToken = newToken;
+
+        // Повторяем оригинальный запрос с новым токеном
+        final options = err.requestOptions;
+        options.headers['Authorization'] = 'Bearer $newToken';
+
+        final response = await dio.request(
+          options.path,
+          options: options,
+        );
+
+        handler.resolve(response);
+      } catch (e) {
+        // Если refresh не удался, выходим из приложения
+        handler.reject(err);
+      }
+    } else {
+      handler.next(err);
+    }
+  }
+}
+
+// Использование:
+final dio = Dio();
+dio.interceptors.add(AuthInterceptor(dio, refreshToken));
+
+Ключевые моменты для собеседования
+✅ 401 статус — триггер для обновления
+✅ Повтор запроса — автоматический через dio.request()
+'''),
+  QA(q: 'В чем разница между dio и http пакетами?', a: '''
+
+┌─────────────────────┬──────────────────────┬──────────────────────┐
+│     Параметр        │        DIO           │        HTTP          │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Размер пакета       │ Тяжелый (~500KB)     │ Легкий (~50KB)       │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Interceptors        │ ✅ Встроены          │ ❌ Нет               │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Retry логика        │ ✅ Встроена          │ ❌ Нужно писать      │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Timeout управление  │ ✅ Подробное         │ ⚠️  Базовое          │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ FormData            │ ✅ Встроено          │ ❌ Нужны доп. пакеты │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Request/Response    │ ✅ Трансформеры      │ ❌ Базовая обработка │
+│ трансформация       │                      │                      │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Отмена запроса      │ ✅ CancelToken       │ ⚠️  Через Signal     │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Кэширование         │ ✅ Встроено          │ ❌ Нет               │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Progress tracking   │ ✅ onSendProgress,   │ ⚠️  Через Stream     │
+│                     │    onReceiveProgress │                      │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Curve encoding      │ ✅ Встроено          │ ⚠️  Вручную          │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Документация        │ ✅ Подробная         │ ⚠️  Минимальная      │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Сложность API       │ ⚠️  Средняя          │ ✅ Простая           │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Использование памяти│ ⚠️  Больше           │ ✅ Меньше            │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Производительность  │ ✅ Быстро            │ ✅ Очень быстро      │
+├─────────────────────┼──────────────────────┼──────────────────────┤
+│ Идеален для         │ Сложные REST API,    │ Простые запросы,     │
+│                     │ микросервисы         │ легкие приложения    │
+└─────────────────────┴──────────────────────┴──────────────────────┘
+
+КОГДА ВЫБРАТЬ:
+
+📦 DIO
+  └─ Большое приложение с сложной логикой авторизации
+  └─ Нужны interceptors, retry, трансформация данных
+  └─ Работа с файлами и multipart
+  └─ REST API с множеством эндпоинтов
+
+📱 HTTP
+  └─ MVP или простое приложение
+  └─ Минимальные зависимости
+  └─ Легкие GET/POST запросы
+  └─ Критична минимизация размера
+''')
 ];
